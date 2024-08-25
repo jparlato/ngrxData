@@ -3,7 +3,6 @@ import {Course, compareCourses} from '../model/course';
 import {map, shareReplay} from 'rxjs/operators';
 
 import { CourseEntityService } from '../services/course-entity.service';
-import {CoursesHttpService} from '../services/courses-http.service';
 import {EditCourseDialogComponent} from '../edit-course-dialog/edit-course-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import {Observable} from "rxjs";
@@ -43,7 +42,6 @@ export class HomeComponent implements OnInit {
       .pipe(
         map(courses => courses.filter(course => course.category == 'BEGINNER'))
       );
-
 
     this.advancedCourses$ =  this.coursesService.entities$
       .pipe(
